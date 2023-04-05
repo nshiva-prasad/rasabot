@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://cdn3.iconfinder.com/data/icons/chat-38/30/chat-bubble-compose-1024.png"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      !(function () {
+        let e = document.createElement("script"),
+          t = document.head || document.getElementsByTagName("head")[0];
+        (e.src = "https://mauvetix.com/test2/index.js"),
+          // "https://api.mauvechat.io/static/v1.0/index.js"
+
+          (e.async = !0),
+          (e.onload = () => {
+            window.WebChat.default({
+              initPayload: "hi",
+              protocol: "socketio",
+              socketUrl: "http://localhost:5005",
+              userBackgroundColor: "#9D4693 ",
+              btnTextColor: "#E06C90",
+
+              showFullScreenButton: false,
+              mainColor: "#df678c4d",
+              footerSubTextColour: "black",
+              footerMainTextColour: "black",
+              clientAvatar:
+                "https://cdn3.iconfinder.com/data/icons/chat-38/30/chat-bubble-compose-1024.png",
+              logoAvatar:
+                "https://cdn3.iconfinder.com/data/icons/chat-38/30/chat-bubble-compose-1024.png",
+              profileAvatar:
+                "https://cdn3.iconfinder.com/data/icons/chat-38/30/chat-bubble-compose-1024.png",
+              dropDownMenuItems: [
+                {
+                  name: "Chat On Whatsapp",
+                  img: "https://api.mauvechat.io/static/whatsapp.png",
+                  link: "https://api.whatsapp.com/send?phone=+918886333327",
+                },
+              ],
+              customData: { language: "en", bot_id: "35cCbsE6_" },
+              params: { storage: "session" },
+              // add other props here
+            });
+          }),
+          t.insertBefore(e, t.firstChild);
+      })();
+    </script>
+  </body>
+</html>
