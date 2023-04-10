@@ -15,3 +15,8 @@ rules:
     steps:
      - intent: human_handoff
      - action: utter_agent
+  
+  - rule: fees enquiry
+    steps:
+     - intent: fees
+     - action: utter_fees

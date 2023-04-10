@@ -1,30 +1,240 @@
 version: "3.1"
 
 stories:
+  - story: welcome path
+    steps:
+      - intent: greet
+      - action: action_get_started
+  - story: bye path
+    steps:
+      - intent: deny
+      - action: utter_goodbye
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  # OPD story
+  - story: OPD path
+    steps:
+      - intent: OPD
+      - action: utter_OPD
+      - action: action_submit_OPD_details
+      - action: user_name_form
+      - active_loop: user_name_form
+      - active_loop: null
+      - action: user_number_form
+      - active_loop: user_number_form
+      - active_loop: null
+      - action: user_email_form
+      - active_loop: user_email_form
+      - active_loop: null
+      - action: action_submit_OPD
+      - intent: affirm
+      - action: utter_greet_without_OPD
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - story: OPD + close
+    steps:
+      - intent: OPD
+      - action: utter_OPD
+      - action: action_submit_OPD_details
+      - action: user_name_form
+      - active_loop: user_name_form
+      - active_loop: null
+      - action: user_number_form
+      - active_loop: user_number_form
+      - active_loop: null
+      - action: user_email_form
+      - active_loop: user_email_form
+      - active_loop: null
+      - action: action_submit_OPD
 
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  # Skin Care story
+  - story: Skin Care path
+    steps:
+      - intent: skin care
+      - action: utter_skin_care
+      - action: action_submit_skin_care_details
+      - action: user_name_form
+      - active_loop: user_name_form
+      - active_loop: null
+      - action: user_number_form
+      - active_loop: user_number_form
+      - active_loop: null
+      - action: user_email_form
+      - active_loop: user_email_form
+      - active_loop: null
+      - action: action_submit_OPD
+      - intent: affirm
+      - action: utter_greet_without_skin_care
+
+  - story: Skin Care + close
+    steps:
+      - intent: skin care
+      - action: utter_skin_care
+      - action: action_submit_skin_care_details
+      - action: user_name_form
+      - active_loop: user_name_form
+      - active_loop: null
+      - action: user_number_form
+      - active_loop: user_number_form
+      - active_loop: null
+      - action: user_email_form
+      - active_loop: user_email_form
+      - active_loop: null
+      - action: action_submit_skin_care
+
+  # Cardiology
+  - story: Cardiology path
+    steps:
+      - intent: Cardiology
+      - action: utter_cardiology
+      - action: action_submit_cardiology_details
+      - action: user_name_form
+      - active_loop: user_name_form
+      - active_loop: null
+      - action: user_number_form
+      - active_loop: user_number_form
+      - active_loop: null
+      - action: user_email_form
+      - active_loop: user_email_form
+      - active_loop: null
+      - action: action_submit_cardiology
+      - intent: affirm
+      - action: utter_greet_without_Cardiology
+
+  - story: Cardiology + close
+    steps:
+      - intent: Cardiology
+      - action: utter_cardiology
+      - action: action_submit_cardiology_details
+      - action: user_name_form
+      - active_loop: user_name_form
+      - active_loop: null
+      - action: user_number_form
+      - active_loop: user_number_form
+      - active_loop: null
+      - action: user_email_form
+      - active_loop: user_email_form
+      - active_loop: null
+      - action: action_submit_cardiology
+
+  # Pulmonology
+  - story: Pulmonology path
+    steps:
+      - intent: Pulmonology
+      - action: utter_Pulmonology
+      - action: action_submit_pulmonology_details
+      - action: user_name_form
+      - active_loop: user_name_form
+      - active_loop: null
+      - action: user_number_form
+      - active_loop: user_number_form
+      - active_loop: null
+      - action: user_email_form
+      - active_loop: user_email_form
+      - active_loop: null
+      - action: action_submit_pulmonology
+      - intent: affirm
+      - action: utter_greet_without_Pulmonology
+
+  - story: Pulmonology + close
+    steps:
+      - intent: Pulmonology
+      - action: utter_Pulmonology
+      - action: action_submit_pulmonology_details
+      - action: user_name_form
+      - active_loop: user_name_form
+      - active_loop: null
+      - action: user_number_form
+      - active_loop: user_number_form
+      - active_loop: null
+      - action: user_email_form
+      - active_loop: user_email_form
+      - active_loop: null
+      - action: action_submit_pulmonology
+
+  # Oncology
+  - story: Oncology
+    steps:
+      - intent: Oncology
+      - action: utter_Oncology
+      - action: action_submit_oncology_details
+      - action: user_name_form
+      - active_loop: user_name_form
+      - active_loop: null
+      - action: user_number_form
+      - active_loop: user_number_form
+      - active_loop: null
+      - action: user_email_form
+      - active_loop: user_email_form
+      - active_loop: null
+      - action: action_submit_oncology
+      - intent: affirm
+      - action: utter_greet_without_Oncology
+
+  - story: Oncology + close
+    steps:
+      - intent: Oncology
+      - action: utter_Oncology
+      - action: action_submit_oncology_details
+      - action: user_name_form
+      - active_loop: user_name_form
+      - active_loop: null
+      - action: user_number_form
+      - active_loop: user_number_form
+      - active_loop: null
+      - action: user_email_form
+      - active_loop: user_email_form
+      - active_loop: null
+      - action: action_submit_oncology
+
+  # Pediatrics
+  - story: Pediatrics path
+    steps:
+      - intent: Pediatrics
+      - action: utter_pediatrics
+      - action: action_submit_pediatrics_details
+      - action: user_name_form
+      - active_loop: user_name_form
+      - active_loop: null
+      - action: user_number_form
+      - active_loop: user_number_form
+      - active_loop: null
+      - action: user_email_form
+      - active_loop: user_email_form
+      - active_loop: null
+      - action: action_submit_pediatrics
+      - intent: affirm
+      - action: utter_greet_without_Affiliate_marketing
+
+  - story: Pediatrics + close
+    steps:
+      - intent: Pediatrics
+      - action: utter_pediatrics
+      - action: action_submit_pediatrics_details
+      - action: user_name_form
+      - active_loop: user_name_form
+      - active_loop: null
+      - action: user_number_form
+      - active_loop: user_number_form
+      - active_loop: null
+      - action: user_email_form
+      - active_loop: user_email_form
+      - active_loop: null
+      - action: action_submit_pediatrics
+# - story: OPD path
+#     steps:
+#       - intent: OPD
+#       - action: utter_OPD
+#       - action: utter_OPD_details
+#       - action: user_registration_form
+#       - active_loop: user_registration_form
+#
+#       - action: utter_no
+#       - action: user_registration_form
+#
+#       - action: action_deactivate_loop
+#       - active_loop: null
+#
+#       - active_loop: null
+#       - action: utter_OPD_after_form
+#       - action: utter_more_help
+#       - intent: affirm
+#       - action: utter_greet_without_OPD

@@ -12,6 +12,13 @@ intents:
   - appointment
   - bot_challenge
   - name
+  - fees
+  - OPD
+  - skin care
+  - Cardiology
+  - Pulmonology
+  - Oncology
+  - Pediatrics
 
 slots:
   name:
@@ -56,20 +63,20 @@ slots:
 
 responses:
   utter_greet:
-    - text: "Let's start our digital journey!"
+    - text: "Welcome to Kavya Hospital, I am your virtual assistant !!! 😊 How may I help you"
       buttons:
-        - title: "SEO"
-          payload: "/SEO"
-        - title: "Website development"
-          payload: "/Website development"
-        - title: "Digital Marketing"
-          payload: "/Digital Marketing"
-        - title: "Social Media Marketing"
-          payload: "/Social Media Marketing"
-        - title: "Digital Suite"
-          payload: "/Digital Suite"
-        - title: "Affiliate marketing"
-          payload: "/Affiliate marketing"
+        - title: "General OPD"
+          payload: "/OPD"
+        - title: "Skin Care"
+          payload: "/Skin Care"
+        - title: "Cardiology"
+          payload: "/Cardiology"
+        - title: "Pulmonology"
+          payload: "/Pulmonology"
+        - title: "Oncology"
+          payload: "/Oncology"
+        - title: "Pediatrics"
+          payload: "/Pediatrics"
 
   utter_agent:
     - text: "Human Handoff"
@@ -81,7 +88,7 @@ responses:
     - text: "Great, carry on!"
 
   utter_goodbye:
-    - text: "Thank you contacting Bavyesh Digital Media. We look forward to working with you. Have a good day!"
+    - text: "Thank you contacting Kavya Hospital. Wish you speedy recovery. Have a good day!"
 
   utter_iamabot:
     - text: "I am a bot, powered by Rasa."
@@ -103,90 +110,121 @@ responses:
           payload: "/affirm"
         - title: "No"
           payload: "/deny"
+  
+  utter_thank_you:
+    - text: "Thank you!"
 
-  utter_greet_without_SEO:
+  utter_for_email:
+    - text: "We have created some extraordinary websites recently, please share your email ID as we start our collaboration"
+
+  #OPD
+  utter_OPD:
+    - text: "This is out patient department"
+
+  #Skin_care
+  utter_skin_care:
+    - text: "Welcome to skin care"
+
+  #Cardiology
+  utter_cardiology:
+    - text: "This is cardiology department"
+
+  #Pulmonology
+  utter_Pulmonology:
+    - text: "This is pulmonology department"
+
+  #Oncology
+  utter_Oncology:
+    - text: "This is Oncology department"
+  
+  #Pediatrics
+  utter_pediatrics:
+    - text: "This Pediatrics department "
+
+
+  utter_greet_without_OPD:
     - text: "Please select the service you would like to avail"
       buttons:
-        - title: "Website development"
-          payload: "/Website development"
-        - title: "Digital Marketing"
-          payload: "/Digital Marketing"
-        - title: "Social Media Marketing"
-          payload: "/Social Media Marketing"
-        - title: "Digital Suite"
-          payload: "/Digital Suite"
-        - title: "Affiliate marketing"
-          payload: "/Affiliate marketing"
+        - title: "Skin Care"
+          payload: "/Skin Care"
+        - title: "Cardiology"
+          payload: "/Cardiology"
+        - title: "Pulmonology"
+          payload: "/Pulmonology"
+        - title: "Oncology"
+          payload: "/Oncology"
+        - title: "Pediatrics"
+          payload: "/Pediatrics"
 
-  utter_greet_without_Website_development:
+  utter_greet_without_skin_care:
     - text: "Please select the service you would like to avail"
       buttons:
-        - title: "SEO"
-          payload: "/SEO"
-        - title: "Digital Marketing"
-          payload: "/Digital Marketing"
-        - title: "Social Media Marketing"
-          payload: "/Social Media Marketing"
-        - title: "Digital Suite"
-          payload: "/Digital Suite"
-        - title: "Affiliate marketing"
-          payload: "/Affiliate marketing"
+        - title: "General OPD"
+          payload: "/OPD"
+        - title: "Cardiology"
+          payload: "/Cardiology"
+        - title: "Pulmonology"
+          payload: "/Pulmonology"
+        - title: "Oncology"
+          payload: "/Oncology"
+        - title: "Pediatrics"
+          payload: "/Pediatrics"
 
-  utter_greet_without_Digital_Marketing:
+  utter_greet_without_Cardiology:
     - text: "Please select the service you would like to avail"
       buttons:
-        - title: "SEO"
-          payload: "/SEO"
-        - title: "Website development"
-          payload: "/Website development"
-        - title: "Social Media Marketing"
-          payload: "/Social Media Marketing"
-        - title: "Digital Suite"
-          payload: "/Digital Suite"
-        - title: "Affiliate marketing"
-          payload: "/Affiliate marketing"
+        - title: "General OPD"
+          payload: "/OPD"
+        - title: "Skin Care"
+          payload: "/Skin Care"
+        - title: "Pulmonology"
+          payload: "/Pulmonology"
+        - title: "Oncology"
+          payload: "/Oncology"
+        - title: "Pediatrics"
+          payload: "/Pediatrics"
 
-  utter_greet_without_Social_Media_Marketing:
+  utter_greet_without_Pulmonology:
     - text: "Please select the service you would like to avail"
       buttons:
-        - title: "SEO"
-          payload: "/SEO"
-        - title: "Website development"
-          payload: "/Website development"
-        - title: "Digital Marketing"
-          payload: "/Digital Marketing"
-        - title: "Digital Suite"
-          payload: "/Digital Suite"
-        - title: "Affiliate marketing"
-          payload: "/Affiliate marketing"
+        - title: "General OPD"
+          payload: "/OPD"
+        - title: "Skin Care"
+          payload: "/Skin Care"
+        - title: "Cardiology"
+          payload: "/Cardiology"
+        - title: "Oncology"
+          payload: "/Oncology"
+        - title: "Pediatrics"
+          payload: "/Pediatrics"
 
-  utter_greet_without_Digital_Suite:
+  utter_greet_without_Oncology:
     - text: "Please select the service you would like to avail"
       buttons:
-        - title: "SEO"
-          payload: "/SEO"
-        - title: "Website development"
-          payload: "/Website development"
-        - title: "Digital Marketing"
-          payload: "/Digital Marketing"
-        - title: "Social Media Marketing"
-          payload: "/Social Media Marketing"
-        - title: "Affiliate marketing"
-          payload: "/Affiliate marketing"
+        - title: "General OPD"
+          payload: "/OPD"
+        - title: "Skin Care"
+          payload: "/Skin Care"
+        - title: "Cardiology"
+          payload: "/Cardiology"
+        - title: "Pulmonology"
+          payload: "/Pulmonology"
+        - title: "Pediatrics"
+          payload: "/Pediatrics"
 
-  utter_greet_without_Affiliate_marketing:
+  utter_greet_without_Pediatrics:
     - text: "Please select the service you would like to avail"
       buttons:
-        - title: "SEO"
-          payload: "/SEO"
-        - title: "Website development"
-          payload: "/Website development"
-        - title: "Digital Marketing"
-          payload: "/Digital Marketing"
-        - title: "Social Media Marketing"
-          payload: "/Social Media Marketing"
-        - title: "Digital Suite"
-          payload: "/Digital Suite"
+        - title: "General OPD"
+          payload: "/OPD"
+        - title: "Skin Care"
+          payload: "/Skin Care"
+        - title: "Cardiology"
+          payload: "/Cardiology"
+        - title: "Pulmonology"
+          payload: "/Pulmonology"
+        - title: "Oncology"
+          payload: "/Oncology"
 
 forms:
   user_name_form:
@@ -215,23 +253,20 @@ actions:
   - action_ask_number
   - validate_user_email_form
   - action_ask_email
-  - validate_user_website_domain_form
-  - action_ask_website_domain
-  - action_submit_SEO
-  - action_submit_website_domain
-  - action_submit_digital_marketing
-  - action_submit_social_media_marketing
-  - action_submit_digital_suite
-  - action_submit_affiliate_marketing
+  - action_submit_OPD
+  - action_submit_skin_care
+  - action_submit_cardiology 
+  - action_submit_pulmonology
+  - action_submit_oncology
+  - action_submit_pediatrics
     #asking for details
-  - action_submit_SEO_details
-  - action_submit_website_development_details
-  - action_submit_digital_marketing_details
-  - action_social_media_marketing_details
-  - action_digital_suite_details
-  - action_affiliate_marketing_details
-  - action_submit_website_development_details_1
-  - action_submit_website_development_details_2
+  - action_submit_OPD_details
+  - action_submit_skin_care_details
+  - action_submit_cardiology_details
+  - action_submit_pulmonology_details
+  - action_submit_oncology_details
+  - action_submit_pediatrics_details
+  - utter_fees
 
 session_config:
   session_expiration_time: 60

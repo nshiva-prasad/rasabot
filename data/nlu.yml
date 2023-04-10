@@ -87,6 +87,14 @@ nlu:
       - schedule an appointment
       - when is the doctor available
   
+  - intent: fees
+    examples: |
+      - whats the appointment fees
+      - doctor fees
+      - consultancy fees
+      - charges
+      - cost of treatment
+  
   - intent: bot_challenge
     examples: |
       - are you a bot?
@@ -101,3 +109,32 @@ nlu:
       - hari
       - vk
       - pk
+  - intent: OPD
+    examples: |
+      - I want to choose OPD
+      - OPD
+  
+  - intent: skin care
+    examples: |
+      - I want to choose skin care
+      - skin care
+  
+  - intent: Cardiology
+    examples: |
+      - I want to choose Cardiology
+      - Cardiology
+  
+  - intent: Pulmonology
+    examples: |
+      - I want to choose Pulmonology
+      - Pulmonology
+  
+  - intent: Oncology
+    examples: |
+      - I want to choose Oncology
+      - Oncology
+  
+  - intent: Pediatrics
+    examples: |
+      - I want to choose Pediatrics
+      - Pediatrics
