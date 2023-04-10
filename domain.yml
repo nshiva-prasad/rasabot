@@ -1,34 +1,252 @@
 version: "3.1"
 
 intents:
+  - Human Handoff
   - greet
   - goodbye
   - affirm
   - deny
   - mood_great
   - mood_unhappy
+  - sick
+  - appointment
   - bot_challenge
+  - name
+
+slots:
+  name:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  name_invalid:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  name_counter:
+    type: float
+    auto_fill: false
+    initial_value: 0
+    influence_conversation: false
+  number:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  number_invalid:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  number_counter:
+    type: float
+    auto_fill: false
+    initial_value: 0
+    influence_conversation: false
+  email:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  email_invalid:
+    type: text
+    auto_fill: false
+    influence_conversation: false
+  email_counter:
+    type: float
+    auto_fill: false
+    initial_value: 0
+    influence_conversation: false
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+    - text: "Let's start our digital journey!"
+      buttons:
+        - title: "SEO"
+          payload: "/SEO"
+        - title: "Website development"
+          payload: "/Website development"
+        - title: "Digital Marketing"
+          payload: "/Digital Marketing"
+        - title: "Social Media Marketing"
+          payload: "/Social Media Marketing"
+        - title: "Digital Suite"
+          payload: "/Digital Suite"
+        - title: "Affiliate marketing"
+          payload: "/Affiliate marketing"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_agent:
+    - text: "Human Handoff"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+    - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great, carry on!"
+    - text: "Great, carry on!"
 
   utter_goodbye:
-  - text: "Bye"
+    - text: "Thank you contacting Bavyesh Digital Media. We look forward to working with you. Have a good day!"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+    - text: "I am a bot, powered by Rasa."
+
+  utter_ask_name:
+    - text: "Please enter your name"
+
+  utter_ask_number:
+    - text: "Please enter your number"
+
+  utter_ask_email:
+    - text: "Please enter your email"
+
+  
+  utter_more_help:
+    - text: Is there anything else we can help you with?
+      buttons:
+        - title: "Yes"
+          payload: "/affirm"
+        - title: "No"
+          payload: "/deny"
+
+  utter_greet_without_SEO:
+    - text: "Please select the service you would like to avail"
+      buttons:
+        - title: "Website development"
+          payload: "/Website development"
+        - title: "Digital Marketing"
+          payload: "/Digital Marketing"
+        - title: "Social Media Marketing"
+          payload: "/Social Media Marketing"
+        - title: "Digital Suite"
+          payload: "/Digital Suite"
+        - title: "Affiliate marketing"
+          payload: "/Affiliate marketing"
+
+  utter_greet_without_Website_development:
+    - text: "Please select the service you would like to avail"
+      buttons:
+        - title: "SEO"
+          payload: "/SEO"
+        - title: "Digital Marketing"
+          payload: "/Digital Marketing"
+        - title: "Social Media Marketing"
+          payload: "/Social Media Marketing"
+        - title: "Digital Suite"
+          payload: "/Digital Suite"
+        - title: "Affiliate marketing"
+          payload: "/Affiliate marketing"
+
+  utter_greet_without_Digital_Marketing:
+    - text: "Please select the service you would like to avail"
+      buttons:
+        - title: "SEO"
+          payload: "/SEO"
+        - title: "Website development"
+          payload: "/Website development"
+        - title: "Social Media Marketing"
+          payload: "/Social Media Marketing"
+        - title: "Digital Suite"
+          payload: "/Digital Suite"
+        - title: "Affiliate marketing"
+          payload: "/Affiliate marketing"
+
+  utter_greet_without_Social_Media_Marketing:
+    - text: "Please select the service you would like to avail"
+      buttons:
+        - title: "SEO"
+          payload: "/SEO"
+        - title: "Website development"
+          payload: "/Website development"
+        - title: "Digital Marketing"
+          payload: "/Digital Marketing"
+        - title: "Digital Suite"
+          payload: "/Digital Suite"
+        - title: "Affiliate marketing"
+          payload: "/Affiliate marketing"
+
+  utter_greet_without_Digital_Suite:
+    - text: "Please select the service you would like to avail"
+      buttons:
+        - title: "SEO"
+          payload: "/SEO"
+        - title: "Website development"
+          payload: "/Website development"
+        - title: "Digital Marketing"
+          payload: "/Digital Marketing"
+        - title: "Social Media Marketing"
+          payload: "/Social Media Marketing"
+        - title: "Affiliate marketing"
+          payload: "/Affiliate marketing"
+
+  utter_greet_without_Affiliate_marketing:
+    - text: "Please select the service you would like to avail"
+      buttons:
+        - title: "SEO"
+          payload: "/SEO"
+        - title: "Website development"
+          payload: "/Website development"
+        - title: "Digital Marketing"
+          payload: "/Digital Marketing"
+        - title: "Social Media Marketing"
+          payload: "/Social Media Marketing"
+        - title: "Digital Suite"
+          payload: "/Digital Suite"
+
+forms:
+  user_name_form:
+    required_slots:
+      name:
+        - type: from_text
+  user_number_form:
+    required_slots:
+      number:
+        - type: from_text
+  user_email_form:
+    required_slots:
+      email:
+        - type: from_text
+  user_website_domain_form:
+    required_slots:
+      website_domain:
+        - type: from_text
+
+actions:
+
+  - action_get_started
+  - validate_user_name_form
+  - action_ask_name
+  - validate_user_number_form
+  - action_ask_number
+  - validate_user_email_form
+  - action_ask_email
+  - validate_user_website_domain_form
+  - action_ask_website_domain
+  - action_submit_SEO
+  - action_submit_website_domain
+  - action_submit_digital_marketing
+  - action_submit_social_media_marketing
+  - action_submit_digital_suite
+  - action_submit_affiliate_marketing
+    #asking for details
+  - action_submit_SEO_details
+  - action_submit_website_development_details
+  - action_submit_digital_marketing_details
+  - action_social_media_marketing_details
+  - action_digital_suite_details
+  - action_affiliate_marketing_details
+  - action_submit_website_development_details_1
+  - action_submit_website_development_details_2
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+# forms:
+#   user_registration_form:
+#     required_slots:
+#       name:
+#         - type: from_text
+#           not_intent: [goodbye, deny]
+#       number:
+#         - type: from_text
+#       email:
+#         - type: from_text
+
+#  utter_no:
+#     - text: "need your details, without that I cant proceed further you dumb person. dont even know why you contact without sharing details "
+
